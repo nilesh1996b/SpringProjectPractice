@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+            
+            
+            <!--  Person Bean Start -->
+       
+       <bean id = "person1" class="com.masai.model.Person">
+       
+       	<property name="id" value="1"></property>
+       	<property name="name" value="N1"></property>
+       	<property name="age" value="28"></property>
+       	<property name="email" value="abc@gmail.com"></property>
+       	<property name="mobile" value="700000000"></property>
+       
+       </bean>
+       <bean id = "person2" class="com.masai.model.Person">
+       
+       	<property name="id" value="2"></property>
+       	<property name="name" value="N2"></property>
+       	<property name="age" value="22"></property>
+       	<property name="email" value="bcd@gmail.com"></property>
+       	<property name="mobile" value="701000000"></property>
+       
+       </bean>
+       <bean id = "person3" class="com.masai.model.Person">
+       
+       	<property name="id" value="3"></property>
+       	<property name="name" value="N3"></property>
+       	<property name="age" value="23"></property>
+       	<property name="email" value="cef@gmail.com"></property>
+       	<property name="mobile" value="702000000"></property>
+       
+       </bean>
+       <bean id = "person4" class="com.masai.model.Person">
+       
+       	<property name="id" value="4"></property>
+       	<property name="name" value="N4"></property>
+       	<property name="age" value="24"></property>
+       	<property name="email" value="efg@gmail.com"></property>
+       	<property name="mobile" value="703000000"></property>
+       
+       </bean>
+       <bean id = "person5" class="com.masai.model.Person">
+       
+       	<property name="id" value="5"></property>
+       	<property name="name" value="N5"></property>
+       	<property name="age" value="25"></property>
+       	<property name="email" value="fgh@gmail.com"></property>
+       	<property name="mobile" value="704000000"></property>
+       
+       </bean>
+
+            <!--  Skill Bean Start -->
+       
+       <bean id = "skill" class="com.masai.model.Skill">
+       	<property name="id" value="10"></property>
+       	<property name="name" value="phython"></property>
+       	<property name="yearsOfExperience" value="5"></property>
+       </bean>
+       <bean id = "skill2" class="com.masai.model.Skill">
+       	<property name="id" value="11"></property>
+       	<property name="name" value="java"></property>
+       	<property name="yearsOfExperience" value="3"></property>
+       </bean>
+       <bean id = "skill3" class="com.masai.model.Skill">
+       	<property name="id" value="12"></property>
+       	<property name="name" value="HTML"></property>
+       	<property name="yearsOfExperience" value="6"></property>
+       </bean>
+
+ 			 
+
+	<bean id="personService" class="com.masai.dao.PersonService">
+
+       	<property name="skillMap">
+       		
+       		<map>
+       			<entry key-ref="person1" value-ref="skill"/>
+       			<entry key-ref="person2" value-ref="skill2"/>
+       			<entry key-ref="person3" value-ref="skill3"/>
+
+       		</map>
+       	</property>
+	
+		<property name="personList">
+			<list>
+				<ref bean="person1"/>
+				<ref bean="person2"/>
+				<ref bean="person3"/>
+				<ref bean="person4"/>
+				<ref bean="person5"/>
+			</list>
+		</property>
+	</bean>
+
+</beans>

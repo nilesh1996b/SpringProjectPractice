@@ -1,0 +1,136 @@
+Explain the Following with an Example :
+
+-------------------- QUESTION 1 --------------------------------------------------
+
+- What do you mean by IOC ? :
+
+Answer - > IoC - Inversion Of Control is the core of Spring Framework. It creates the objects, 
+	configures and assembles their dependencies, manages their entire life cycle.
+ 
+	The Container uses Dependency Injection(DI) to manage the components that make up the application. 
+	It gets the information about the objects from a configuration file(XML) or Java Code or Java Annotations and Java POJO class. 
+	These objects are called Beans. Since the Controlling of Java objects and their lifecycle is not done by the developers, 
+	hence the name Inversion Of Control. 
+
+	Example : - 
+		There are two types of IoC containers.
+
+		1) BeanFactory (
+				Resource resource=new ClassPathResource("applicationContext.xml");  
+				BeanFactory factory=new XmlBeanFactory(resource);  
+					)
+
+		2) ApplicationContext (ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");)
+
+
+
+-------------------- QUESTION 2 --------------------------------------------------
+
+- What is Dependency Injection? Explain with an example (preferably a simple code). ? :
+	Answer -> Java Dependency Injection design pattern allows us to remove the hard-coded dependencies and make our application loosely coupled, 
+		    extendable and maintainable. We can implement dependency injection in java to move the dependency resolution from compile-time to runtime.
+
+	Examples - > 
+
+
+	public class Travel {
+	
+
+	// user type	
+	private Vehicle v;
+	
+	
+	//Simple value type
+	private int numberOfPerson;
+	
+	
+	
+	//constructor injection point
+	public Travel(Vehicle v)
+	{
+		this.v = v;
+	}
+		
+	//setter injection point
+	public void setV(Vehicle v) {
+		this.v = v;
+	}
+	
+    //setter injection point	
+	public void setNumberOfPerson(int numberOfPerson) {
+		this.numberOfPerson = numberOfPerson;
+	}
+
+
+-------------------- QUESTION 3 --------------------------------------------------
+
+Tight Coupling
+	1) An object that needs to know about other objects and is usually highly dependent on each other's interfaces.
+	2) Changing object in a tightly coupled application usually requires changes to a number of other objects.
+	3) In the small applications, we can easily identify the changes and there is less chance to miss anything. But in large applications, 
+	   these inter-dependencies are not always known by every programmer and there is a chance of overlooking changes.
+
+Example - >
+
+class A {
+   public int a = 0;
+   public int getA() {
+      System.out.println("getA() method");
+      return a;
+   }
+   public void setA(int aa) {
+      if(!(aa > 10))
+         a = aa;
+   }
+}
+public class B {
+   public static void main(String[] args) {
+      A obj = new A();
+      obj.a = 100; 
+      System.out.println("obj.a value is: " + obj.a);
+   }
+}
+
+Loose Coupling
+   1) Reduce the inter-dependencies between components of a system with the goal of reducing the risk that changes 
+	in one component will require changes in any other component.
+   2) Loose coupling is a much more generic concept intended to increase the flexibility of the system, 
+      make it more maintainable and makes the entire framework more stable.
+
+Example : - 
+
+class A {
+   private int a = 0;
+   public int getA() {
+      System.out.println("getA() method");
+      return a;
+   }
+   public void setA(int aa) {
+      if(!(aa > 10))
+         a = aa;
+   }
+}
+public class B {
+   public static void main(String[] args) {
+      A obj = new A();
+      obj.setA(100); 
+      System.out.println("obj value is: " + obj.getA());
+   }
+}
+
+-------------------- QUESTION 4 --------------------------------------------------
+
+- What do you mean by Distributed Application ? Explain the types of Scaling. ?
+
+Answer - > 
+The Java platform uses a distributed application model for enterprise applications. 
+Application logic is divided into components according to function, and the application components that make 
+up a Java EE application are installed on various machines, depending on the tier in the multitiered Java EE 
+environment to which the application component belongs.
+
+1) Horizontal Scalling - Load balancer takes the request and allocate to the server 
+which is present and if the server is full then it increases new server.
+
+2) Vertical Scalling - Load balancer takes the request and allocate to the server 
+which is present and if the server is full then it increases the size of the current server.
+	
