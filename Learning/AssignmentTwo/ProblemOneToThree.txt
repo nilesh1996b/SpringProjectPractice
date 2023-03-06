@@ -1,0 +1,63 @@
+Q1/- Write down some of the HTTP request, and response headers. ----------------------------------------------------------------------------------->
+Answer - 
+
+HTTP request headers
+1. HttpServletRequest 
+2. Spring MVC
+
+HTTP response headers
+1. setHeader(java.lang.String, java.lang.String)
+2. addHeader(java.lang.String, java.lang.String)
+3. setDateHeader(java.lang.String, long)
+4. addDateHeader(java.lang.String, long)
+5. setIntHeader(java.lang.String, int) or
+6. addIntHeader(java.lang.String, int) respectively.
+
+Q2/- Write down some of the frequently used HTTP Status codes and their meanings. ----------------------------------------------------------------------------------->
+
+Successful responses
+200 OK
+The request succeeded. The result meaning of "success" depends on the HTTP method:
+
+GET: The resource has been fetched and transmitted in the message body.
+HEAD: The representation headers are included in the response without any message body.
+PUT or POST: The resource describing the result of the action is transmitted in the message body.
+TRACE: The message body contains the request message as received by the server.
+201 Created
+The request succeeded, and a new resource was created as a result. This is typically the response sent after POST requests, or some PUT requests.
+
+202 Accepted
+The request has been received but not yet acted upon. It is noncommittal, since there is no way in HTTP to later send an asynchronous response indicating the outcome of the request. It is intended for cases where another process or server handles the request, or for batch processing.
+
+203 Non-Authoritative Information
+This response code means the returned metadata is not exactly the same as is available from the origin server, but is collected from a local or a third-party copy. This is mostly used for mirrors or backups of another resource. Except for that specific case, the 200 OK response is preferred to this status.
+
+204 No Content
+There is no content to send for this request, but the headers may be useful. The user agent may update its cached headers for this resource with the new ones.
+
+205 Reset Content
+Tells the user agent to reset the document which sent this request.
+
+206 Partial Content
+This response code is used when the Range header is sent from the client to request only part of a resource.
+
+What is the difference between SOAP and REST ? ----------------------------------------------------------------------------------->
+
+SOAP
+SOAP is a messaging protocol for exchanging information between two computers based on XML over the internet. SOAP messages are purely written in XML which is why they are platform and language independent.
+
+A SOAP message contains:
+
+An Envelope that indicates the start and end of the message
+A Header that includes attributes used to process the message and is an optional element
+A Body that holds the XML data that is to be sent and it cannot be left out
+A Fault which provides error messages when processing and it is an optional element.
+
+REST
+REST is a web standard architecture that achieves data communication using a standard interface such as HTTP or other transfer protocols that use standard Uniform Resource Identifier (URI). The design is such that each component in a RESTful web service is a resource that can be accessed using standard HTTP methods (if the chosen protocol is HTTP). Resources which can be thought of as objects in the concept of Object oriented programming (OOP) are identified by URIs and the resources are represented in several ways such as JSON, XML, Text etc. though JSON is currently the more favoured choice.
+
+RESTful services have the following properties: Representations, Messages, URIs, Uniform interface, Stateless, Links between resources and caching. A quick look into these properties below using HTTP
+
+Representation- resources are represented in different formats as earlier stated and should be a complete representation of the resource.
+Messages- This is how the client and server interact. Along with the data, messages contain metadata bout the message. When accessing a RESTful resource using HTTP, the commonly used methods are GET (reads a resource), PUT (creates a resource), DELETE (removes a resource) and POST (updates an existing resource)
+

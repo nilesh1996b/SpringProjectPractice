@@ -1,0 +1,44 @@
+!) Limitations Of JDBC.
+
+JDBC persistence logic supports SQL statements based programing, these are database s/w dependent statements. 
+So JDBC persistence logic is database s/w dependent persistence logic.That's means if we want to change database 
+s/w in the middle of project development it is not possible,we have to re develop JDBC persistence logic for other 
+database s/w's.
+
+Solution:To overcome this problem we have to go for ORM -framework s/w's based persistence logic (ex: Hibernate, ibaties, toplink,..etc).
+
+By default JDBC ResultSet object is not serializable, so we can not send that object over the network.
+To overcome this RowSet introduced but that is not supporting for all JDBC drivers.
+
+Solution:We have to take the support of DTO(Data Transfer Object)/VO(Value Object) design pattern.
+
+
+2) Differentiate between Hibernate and JPA.
+
+Advantages of JPA
+a) The burden of interacting with the database reduces significantly by using JPA.
+b) The programming task becomes easy by using O/R mapping and database access processing.
+c) Annotations reduce the code of creating definition files.
+d) Using different implementations can add the features to the standard implementation which can later be the part of JPA specification.
+
+Advantages of Hibernate
+a) Hibernate supports Inheritance, Associations, and Collections.
+b) Hibernate can generate primary keys automatically while we are storing the records in the database.
+c) Hibernate has its query language, i.e., Hibernate query language, which is database-independent, so if you change the database, then also our application will work as HQL is database independent.
+d) Hibernate provides Dialect classes, so you do not need to write SQL queries in hibernate. Instead, we use the methods provided by that API.
+
+3) Beans are special type of Pojos. There are some restrictions on POJO to be a bean.
+a) All JavaBeans are POJOs but not all POJOs are JavaBeans.
+b) Serializable i.e. they should implement Serializable interface. Still, some POJOs who don’t implement a Serializable interface are called POJOs because Serializable is a marker interface and therefore not of many burdens.
+c) Fields should be private. This is to provide complete control on fields.
+d) Fields should have getters or setters or both.
+e) A no-arg constructor should be there in a bean.
+f) Fields are accessed only by constructor or getter setters.
+
+4) ORM Advantages and Disadvantages 
+Let’s look at ORM technique advantages over the plain JDBC. First of all, it is designed to let the business code access objects rather than DB tables. 
+In applications that use ORM, we hide details of SQL queries from object-oriented logic. Anyway, ORMs are based on JDBC ‘under the hood.’ Developers 
+don’t need to deal with database implementation. Entities application turns to application based on business concepts rather than the structure of the 
+database. With ORM we get all the transaction management and automatic key generation. Our application development is much quicker. ORMs improve the 
+maintainability of applications. You need to write a lot less code and do not need to deal with the database implementation. ORMs improve portability 
+because generate database-specific SQL for you, Finally, entities are more based on business concepts rather than a database structure.

@@ -1,0 +1,14 @@
+Q4/- What are the different types of Maven repositories ?
+
+Answer : - 
+		a)Local - 
+			The Local repository is a directory on the computer where Maven runs. 
+			It caches remote downloads and contains temporary build artifacts that you have 
+			not yet released.
+		b)Remote - 
+			Remote repositories refer to any other type of repository, accessed by a variety 
+			of protocols such as file:// and https://. These repositories might be a truly 
+			remote repository set up by a third party to provide their artifacts for downloading 
+			(for example, repo.maven.apache.org). Other "remote" repositories may be internal 
+			repositories set up on a file or HTTP server within your company, used to share 
+			private artifacts between development teams and for releases.

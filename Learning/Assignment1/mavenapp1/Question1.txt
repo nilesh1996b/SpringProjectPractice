@@ -1,0 +1,23 @@
+Q1/ 
+
+A) Build process of the Java Application.
+
+Answer - : 
+
+	a) Add or write the code to create the application creation, and process it into the source code repository.
+	b) Edit any necessary configuration / pom.XML / plugin details.
+	c) Build the actual application.
+	d) Save your build process output as either a WAR or EAR file to a local server or other location.
+	e) Access the file from the local location or server and deploy it to the production or client site.
+	f) Update the application document by changing the date and updated application version number, if necessary.
+	g) Create and generate a report as requested for the application or the requirement.
+
+B) How the Maven helps in the application build?
+
+	a) Helps manage all the processes, such as building, documentation, releasing, and distribution in project management
+	b) Simplifies the process of project building
+	c) Increases the performance of the project and the building process
+	d) The task of downloading Jar files and other dependencies is done automatically
+	e) Provides easy access to all the required information 
+	f) Makes it easy for the developer to build a project in different environments without worrying about the dependencies, processes, etc.
+	g) In Maven, it’s easy to add new dependencies by writing the dependency code in the pom file
