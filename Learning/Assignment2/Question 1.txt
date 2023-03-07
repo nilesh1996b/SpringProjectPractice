@@ -1,0 +1,12 @@
+Limitations Of JDBC:
+
+	a) JDBC persistence logic supports SQL statements based programing, these are database s/w dependent statements. 
+	   So JDBC persistence logic is database s/w dependent persistence logic.That's means if we want to change database 
+	   s/w in the middle of project development it is not possible,we have to re develop JDBC persistence logic for other database s/w's.
+
+	Examples : -Solution:To overcome this problem we have to go for ORM -framework s/w's based persistence logic (ex: Hibernate, ibaties, toplink,..etc).
+
+	b) By default JDBC ResultSet object is not serializable, so we can not send that object over the network.To overcome this RowSet 
+	   introduced but that is not supporting for all JDBC drivers.
+
+	Examples : -Solution:We have to take the support of DTO(Data Transfer Object)/VO(Value Object) design pattern.

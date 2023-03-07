@@ -1,0 +1,20 @@
+Explain about the ORM.
+
+	Ans- ORM is short for Object Relational Mapping. In a nutshell, an ORM framework is a program written in an object-oriented language 
+	     (such as PHP, Java, C#, etc.) that wraps around a relational database.
+
+
+What are the benefits of the ORM approach over the
+JDBC approach.
+
+	Ans- a) So, first and foremost, you get to write in the language that you already know. Directly writing SQL queries can be difficult in some 
+	     circumstances since they are complex. So, to keep fluency, we use ORM, which allows us to write in the language we are familiar with.
+
+	     b) Second, it separates your application logic from SQL or any other database query.
+
+	     c) ORMs also theoretically allow an application to switch between different relational databases. A developer may, for example, 
+		 use SQLite for local development and MySQL for production. With few code changes, a production application might be moved from 
+		 MySQL to PostgreSQL.
+
+	     d) Also,  for heavy database usages, such as creating 10+ tables and many queries in them, ORM is recommended since it reduces code, 
+		 improves code understanding for you and your team members, and makes your application faster and easier to maintain.
