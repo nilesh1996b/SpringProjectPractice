@@ -1,0 +1,103 @@
+Explain the Following with an Example :
+
+-------------------- QUESTION 1 --------------------------------------------------
+
+- What do you mean by the IOC ? :
+
+Answer - > IoC - Inversion Of Control is the core of Spring Framework. It creates the objects, 
+	configures and assembles their dependencies, manages their entire life cycle.
+ 
+	The Container uses Dependency Injection(DI) to manage the components that make up the application. 
+	It gets the information about the objects from a configuration file(XML) or Java Code or Java Annotations and Java POJO class. 
+	These objects are called Beans. Since the Controlling of Java objects and their lifecycle is not done by the developers, 
+	hence the name Inversion Of Control. 
+
+	Example : - 
+		There are two types of IoC containers.
+
+		1) BeanFactory (
+				Resource resource=new ClassPathResource("applicationContext.xml");  
+				BeanFactory factory=new XmlBeanFactory(resource);  
+					)
+
+		2) ApplicationContext (ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");)
+
+
+
+-------------------- QUESTION 2 --------------------------------------------------
+
+- What is Dependency Injection ? :
+	Answer -> Java Dependency Injection design pattern allows us to remove the hard-coded dependencies and make our application loosely coupled, 
+		    extendable and maintainable. We can implement dependency injection in java to move the dependency resolution from compile-time to runtime.
+
+	Examples - > 
+
+
+	public class Travel {
+	
+
+	// user type	
+	private Vehicle v;
+	
+	
+	//Simple value type
+	private int numberOfPerson;
+	
+	
+	
+	//constructor injection point
+	public Travel(Vehicle v)
+	{
+		this.v = v;
+	}
+		
+	//setter injection point
+	public void setV(Vehicle v) {
+		this.v = v;
+	}
+	
+    //setter injection point	
+	public void setNumberOfPerson(int numberOfPerson) {
+		this.numberOfPerson = numberOfPerson;
+	}
+
+
+
+-------------------- QUESTION 3 --------------------------------------------------
+
+- Explain the life cycle of the Spring Bean ?
+
+Answer - > 
+	Spring keep track all the activity performed by a bean from creation to destruction. Spring IOC Container 
+	(BeanFactory, ApplicationCOntext) manages spring bean life cycle and raise 2 events.
+
+	1)- init() :- Execute after all dependent values are injected.
+
+	2)- destroy() :- Execute when IOC container is about to destroy bean class.
+
+	Example - > 
+	public class A {
+	
+	
+	public void mySetup()
+	{
+		//Connection creating logic
+		//initialization logic
+		
+		System.out.println("Inside mySetup method...");
+	}
+	
+	public void destroy()
+	{
+		System.out.println("inside destroy method");
+	}
+
+
+INSIDE MAIN - > ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationHeart.xml");
+		
+		A a1 = ctx.getBean("aid",A.class);
+		
+		a1.showA();
+		
+		ClassPathXmlApplicationContext ctx2 = (ClassPathXmlApplicationContext)ctx;
+		ctx2.close();
